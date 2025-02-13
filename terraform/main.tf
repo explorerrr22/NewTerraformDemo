@@ -12,7 +12,10 @@ terraform {
 provider "azurerm" {
   features {
   }
-  subscription_id = "838b00f7-ea95-49fe-b225-e1d8238e059c"
+  client_id       = var.ARM_CLIENT_ID
+  client_secret   = var.ARM_CLIENT_SECRET
+  tenant_id       = var.ARM_TENANT_ID
+  subscription_id = var.ARM_SUBSCRIPTION_ID
 }
 
 #Resource block
