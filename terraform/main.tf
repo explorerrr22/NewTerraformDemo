@@ -8,6 +8,15 @@ terraform {
   }
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "Backend_Terraform-rg"
+    storage_account_name = "trfbackendstorage"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
+}
+
 #azure provider
 provider "azurerm" {
   features {
